@@ -6,6 +6,7 @@ in
 {
 	useCompressedHdrTextures = cvars.cvarBool "use_compressed_hdr_textures" "";
 	phong = cvars.cvarBool "phong" "";
+	aaQuality = cvars.cvarInt "aaquality" "";
 	antiAlias = cvars.cvarInt "antialias" "";
 	bumpMap = cvars.cvarBool "bumpmap" "";
 	compressedTextures = cvars.cvarBool "compressed_textures" "";

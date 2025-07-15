@@ -14,7 +14,7 @@
 		tweakDefs = import ./lib/tweaks.nix { inherit lib; };
 
 		# Import the config renderer
-		renderConfig = cfg: opts: (import ./lib/render.nix { inherit lib pkgs cfg opts; });
+		renderConfig = cfg: opts: (import ./lib/render.nix { inherit lib cfg opts; });
 
 		# Import the user config
 		tf2Config = pkgs.lib.evalModules {

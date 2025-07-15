@@ -1,4 +1,4 @@
-{ lib, pkgs, cfg, opts }:
+{ lib, cfg, opts }:
 
 let
 	toCfgValue = val:
@@ -72,8 +72,17 @@ renderCvars = prefix: cfg: opts:
 				""
 	) (builtins.attrNames cfg);
 in
-	builtins.concatStringsSep "\n" (
-		pkgs.lib.filter (line: line != "") (
-			pkgs.lib.splitString "\n" (renderCvars "" cfg opts)
-		)
-	) + "\n"
+	let
+		prefix = cfg.extraPrefixConfig or "";
+		postfix = cfg.extraPostfixConfig or "";
+		body = builtins.concatStringsSep "\n" (
+			lib.filter (line: line != "") (
+				lib.splitString "\n" (renderCvars "" cfg opts)
+			)
+		) + "\n";
+	in
+		builtins.concatStringsSep "\n" (
+			lib.filter (line: line != "") (
+				lib.splitString "\n" (prefix + "\n" + body + "\n" + postfix)
+			)
+		) + "\n"

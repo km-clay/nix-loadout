@@ -31,7 +31,22 @@
 				exec = [ "default" ];
 			};
 			engineer = {
-				exec = [ "default" ];
+				extraPrefixConfig = "exec default"; # must be executed first - will wipe these binds/aliases otherwise
+				alias = {
+					"dispenser" = "build 0";
+					"entrance" = "build 1";
+					"sentry" = "build 2";
+					"tele_exit" = "build 3";
+					"+toggle_destroy" = "alias dispenser destroy 0; alias entrance destroy 1; alias sentry destroy 2; alias tele_exit destroy 3";
+					"-toggle_destroy" = "alias dispenser build 0; alias entrance build 1; alias sentry build 2; alias tele_exit build 3";
+				};
+				bind = {
+					"c".cmd = "dispenser";
+					"x".cmd = "tele_exit";
+					"f".cmd = "sentry";
+					"z".cmd = "entrance";
+					"shift".cmd = "+toggle_destroy";
+				};
 			};
 			medic = {
 				exec = [ "default" ];
@@ -181,7 +196,109 @@
 			};
 
 			"gfx" = {
-				# todo
+				fpsMax = 300;
+				client = {
+					showFps = true;
+					ejectBrass = true;
+					newImpactEffects = true;
+					burningGibs = true;
+					detailDist = 8096;
+					detailFade = 0.0;
+					maxRenderableDist = 8096;
+					physPropsMax = 1024;
+					ragdollCollide = true;
+					forcePreload = true;
+					loadOnDemandDefault = false;
+				};
+				render = {
+					AvgLight = 3;
+					decals = 4096;
+					eyeGlintLodPixels = 4;
+					lod = 0;
+					maxModelDecal = 4096;
+					radiosity = 3;
+					rainRadius = 2250;
+					rainSplashPercentage = 100;
+					rootLod = 0;
+					pixelFog = true;
+					fastZReject = -1;
+					queue = {
+						decals = false;
+						ropes = true;
+						postProcessing = false;
+					};
+					threading = {
+						clientShadowManager = true;
+						particles = true;
+						renderables = true;
+					};
+					shadows = {
+						enable = true;
+						maxRendered = 1024;
+						renderToTexture = true;
+					};
+					water = {
+						drawReflection = true;
+						drawRefraction = true;
+						forceExpensive = true;
+						forceReflectEntities = true;
+					};
+				};
+				material = {
+					useCompressedHdrTextures = true;
+					phong = false;
+					aaQuality = 2;
+					antiAlias = 8;
+					bumpMap = true;
+					compressedTextures = true;
+					envMapSize = 512;
+					envMapTgaSize = 512;
+					forceAnIso = 16;
+					hdrLevel = 2;
+					monitorGamma = 2.2;
+					specular = true;
+					parallaxMap = true;
+					picmip = -1;
+					postProcessX = 8;
+					postProcessY = 8;
+					reduceFillRate = false;
+					waterOverlaySize = 512;
+					viewportScale = 1.0;
+					viewportUpscale = 1.0;
+					clipZ = true;
+					forceHardwareSync = false;
+					levelFlush = true;
+					vSync = false;
+					queueMode = -1;
+
+					motionBlur = {
+						enable = false;
+						forwardEnabled = false;
+						strength = 0.0;
+					};
+
+					softwareAntiAlias = {
+						blurOnePixelLines = 0.5;
+						edgeThreshold = 0.8;
+						quality = 2;
+						strength = 2;
+						strengthVgui = 2;
+					};
+				};
+				multiplayer = {
+					decals = 4096;
+					useHwmModels = true;
+					useHwmVcds = true;
+				};
+				lod = {
+					transitionDist = 6400.0;
+				};
+				server = {
+					cheats = true;
+				};
+				extraPostfixConfig = ''
+					echo "TF2Nix gfx config loaded."
+				'';
 			};
 		};
 	};

@@ -23,10 +23,15 @@ in
 	demoSupport  = cvars.cvarPrefix "ds_"    (import ./demos.nix {inherit lib;});
 
 	fovDesired = cvars.cvarInt "fov_desired" "Desired field of view for the game.";
-	extraConfig = lib.mkOption {
+	extraPrefixConfig = lib.mkOption {
 		type = lib.types.lines;
 		default = "";
-		description = "Additional configuration options for the game. Each line is a separate option.";
+		description = "Raw configuration lines. Inserted before any of the other options.";
+	};
+	extraPostfixConfig = lib.mkOption {
+		type = lib.types.lines;
+		default = "";
+		description = "Raw configuration lines. Inserted after all other options.";
 	};
 	exec = lib.mkOption {
 		type = lib.types.listOf lib.types.str;
@@ -58,6 +63,11 @@ in
 		description = "Key bindings. Set the command using the 'cmd' option with a command string, and set as a bindToggle by using the 'toggle' option.";
 	};
 
+	lod = cvars.cvarPrefix "lod_" {
+		transitionDist = cvars.cvarFloat "transitiondist" "Distance at which LOD transitions occur.";
+	};
+
 	rate = cvars.cvarInt "rate" "";
 	sensitivity = cvars.cvarFloat "sensitivity" "Mouse sensitivity.";
+	fpsMax = cvars.cvarInt "fps_max" "Maximum frames per second.";
 }
