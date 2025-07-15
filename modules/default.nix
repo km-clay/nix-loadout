@@ -5,6 +5,12 @@ let
   tf2Submodule = lib.types.submodule { options = tf2Opts; };
 in
 {
+	options.tweaks = lib.mkOption {
+		type = lib.types.attrsOf lib.types.bool;
+		default = {};
+		description = "Enable specific tweak configurations";
+	};
+
   options.autoexec = tf2Opts;
 
   options.class = lib.genAttrs [

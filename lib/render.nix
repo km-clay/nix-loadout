@@ -47,8 +47,9 @@ renderCvars = prefix: cfg: opts:
 			opt = opts.${name} or null;
 			isPrefix = opt.extra.prefix or false;
 			cvarName = opt._cvarName or "";
+			type = opt.type or null;
 			subOpts =
-				if opt != null && opt.type ? getSubOptions then
+				if opt != null && type ? getSubOptions then
 					opt.type.getSubOptions []
 				else
 					{};  # fallback if not a submodule

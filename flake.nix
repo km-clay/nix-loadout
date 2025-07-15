@@ -11,6 +11,7 @@
 		pkgs = import nixpkgs { inherit system; };
 		lib = pkgs.lib;
 		tf2Nix = import ./modules;
+		tweakDefs = import ./lib/tweaks.nix { inherit lib; };
 
 		# Import the config renderer
 		renderConfig = cfg: opts: (import ./lib/render.nix { inherit lib pkgs cfg opts; });
@@ -23,16 +24,24 @@
 			];
 		};
 
+  enabledTweakConfigs =
+    lib.pipe tf2Config.config.tweaks [
+      (lib.filterAttrs (_: v: v == true))
+      (lib.mapAttrsToList (name: _: tweakDefs.${name}))
+      (lib.fold lib.recursiveUpdate { })
+    ];
 	renderedCfg =
 		let
 			rendered = {
-				autoexec = renderConfig tf2Config.config.autoexec tf2Config.options.autoexec;
+				autoexec = renderConfig
+					(lib.recursiveUpdate tf2Config.config.autoexec enabledTweakConfigs)
+					tf2Config.options.autoexec;
 			}
 			// (builtins.mapAttrs (name: cfg:
 				renderConfig cfg tf2Config.options.class.${name}
 			) tf2Config.config.class)
 			// (builtins.mapAttrs (name: cfg:
-				renderConfig cfg tf2Config.options.cfgFiles.${name}
+				renderConfig cfg tf2Config.options.autoexec
 			) tf2Config.config.cfgFiles);
 
 			# Filter out null or empty configs
