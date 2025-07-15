@@ -2,8 +2,14 @@
 
 {
 	config = {
-		tweaks = {
+		sound.hitsound = builtins.path { path = ./hitsound.wav; };
+		sound.killsound = builtins.path { path = ./killsound.wav; };
+		hud.ahud-cc = {
+			enable = true;
+		};
+		enableTweaks = {
 			nullCancelMovement = true;
+			tabGraph = true;
 		};
 		autoexec = {
 			exec = [

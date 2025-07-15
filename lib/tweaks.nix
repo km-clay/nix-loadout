@@ -1,6 +1,17 @@
 { lib }:
 
 {
+	tabGraph = {
+		alias = {
+			"+tabgraph" = "+showscores; net_graph 4";
+			"-tabgraph" = "-showscores; net_graph 0; timeleft";
+			"graphtoggle" = "incrementvar net_graph 0 4 4";
+		};
+		bind = {
+			"tab".cmd = "+tabgraph";
+			"-".cmd = "graphtoggle";
+		};
+	};
 	nullCancelMovement = {
 		alias = {
 			"null" = "";

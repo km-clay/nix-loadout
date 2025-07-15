@@ -21,6 +21,19 @@ in
 			training = cvars.cvarBool "training" "";
 		};
 	};
+	tournament = cvars.cvarPrefix "tournament_" {
+		classlimit = cvars.cvarPrefix "classlimit_" {
+			scout = cvars.cvarInt "scout" "";
+			soldier = cvars.cvarInt "soldier" "";
+			pyro = cvars.cvarInt "pyro" "";
+			demoman = cvars.cvarInt "demoman" "";
+			heavy = cvars.cvarInt "heavy" "";
+			engineer = cvars.cvarInt "engineer" "";
+			medic = cvars.cvarInt "medic" "";
+			sniper = cvars.cvarInt "sniper" "";
+			spy = cvars.cvarInt "spy" "";
+		};
+	};
 	mvm = cvars.cvarPrefix "mvm_" {
 		tabsDiscovered = cvars.cvarInt "tabs_discovered" "";
 	};
@@ -57,5 +70,10 @@ in
 	remember = cvars.cvarPrefix "remember_" {
 		activeWeapon = cvars.cvarBool "activeweapon" "";
 		lastSwitched = cvars.cvarBool "lastswitched" "";
+	};
+	forcedHoliday = cvars.cvarBool "forced_holiday" "";
+	birthday = cvars.cvarPrefix "birthday" {
+		enabled = cvars.cvarBool "" "";
+		ballChance = cvars.cvarFloat "_ball_chance" "";
 	};
 }
