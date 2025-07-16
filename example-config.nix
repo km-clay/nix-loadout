@@ -1,9 +1,7 @@
 { config, ... }:
 
 {
-	config = {
-		sound.hitsound = builtins.path { path = ./hitsound.wav; };
-		sound.killsound = builtins.path { path = ./killsound.wav; };
+	config.custom = {
 		hud.ahud-cc = {
 			enable = true;
 		};
@@ -305,6 +303,29 @@
 				extraPostfixConfig = ''
 					echo "TF2Nix gfx config loaded."
 				'';
+			};
+		};
+	};
+	config.global = {
+		installMaps = {
+			mge = true;
+			proMaps = true;
+		};
+		sourcemod = {
+			enable = true;
+			plugins = {
+				rglServerResourcesUpdater.enable = true;
+				fixStvSlot.enable = true;
+				restoreScore.enable = true;
+				afk.enable = true;
+				waitForStv.enable = true;
+				recordStv.enable = true;
+				logsTf.enable = true;
+				supStats2.enable = true;
+				medicStats.enable = true;
+				extraPlugins = [
+					
+				];
 			};
 		};
 	};
