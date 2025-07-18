@@ -43,7 +43,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-cDQDKQU0Ywb7zVDoscDB6b7s1rkAeJVBhg7lhFz69Ow=";
+				sha256 = "sha256-0vLsoHy+RU9cl49R05eJTuykbS5Ohj2e9k81hwSk2Vc=";
 			};
 		in
 			pkgs.runCommand "srcmod-supstats2" {
@@ -60,7 +60,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-h+zIHktly1CHld4eaJPJOjj+yL2qC5vo9UA6TH8OYvU=";
+				sha256 = "sha256-9zYqLlNqoVspcVOxuLNc2+Lt81k4PYEpkiftNHTrmyE=";
 			};
 		in
 			pkgs.runCommand "srcmod-logs-tf" {
