@@ -26,7 +26,7 @@
 						# i definitely clicked this link on a teamfortress.tv forum post
 						"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 					];
-					sha256 = "sha256-DKHZkzh2GUFnVsPqMKZZAXLk9FPOaH3yvbkSGapoNPo=";
+					sha256 = "sha256-oWtnBy5o3RcQlsH3Qm6NS/RpJ9v+wgabMvEBsq/Cwag=";
 				};
 		in
 			pkgs.runCommand "srcmod-medic-stats" {
