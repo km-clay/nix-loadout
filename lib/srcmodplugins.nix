@@ -111,7 +111,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-y3x9z0k84xe6Q2/81nbbXoOd8pAFMg5QmYYodJNRaRk=";
+				sha256 = "sha256-99cDskvlK/kNRpNcNnavC26qebCShIKm9dyeQKAz8q0=";
 			};
 		in
 			pkgs.runCommand "srcmod-wait-for-stv" {
