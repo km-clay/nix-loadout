@@ -1,7 +1,7 @@
 { lib, pkgs }:
 
 {
-	rglServerResourcesUpdater = 
+	rglServerResourcesUpdater =
 		let
 			src = pkgs.fetchurl {
 				url = "https://github.com/RGLgg/server-resources-updater/releases/latest/download/server-resources-updater.zip";
@@ -14,7 +14,7 @@
 				mkdir -p $out
 				unzip ${src} -d $out
 			'';
-	medicStats = 
+	medicStats =
 		let
 				src = pkgs.fetchurl {
 					url = "http://sourcemod.krus.dk/medicstats.zip";
@@ -86,7 +86,7 @@
 				mkdir -p $out/addons/sourcemod/plugins
 				unzip ${src} -d $out/addons/sourcemod/plugins
 			'';
-	recordStv = 
+	recordStv =
 		let
 			src = pkgs.fetchurl {
 				url = "http://sourcemod.krus.dk/recordstv.zip";
@@ -103,7 +103,7 @@
 				mkdir -p $out/addons/sourcemod/plugins
 				unzip ${src} -d $out/addons/sourcemod/plugins
 			'';
-	waitForStv = 
+	waitForStv =
 		let
 			src = pkgs.fetchurl {
 				url = "http://sourcemod.krus.dk/waitforstv.zip";
@@ -120,7 +120,7 @@
 				mkdir -p $out/addons/sourcemod/plugins
 				unzip ${src} -d $out/addons/sourcemod/plugins
 			'';
-	afk = 
+	afk =
 		let
 			src = pkgs.fetchurl {
 				url = "http://sourcemod.krus.dk/afk.zip";
@@ -137,7 +137,7 @@
 				mkdir -p $out/addons/sourcemod/plugins
 				unzip ${src} -d $out/addons/sourcemod/plugins
 			'';
-	restoreScore = 
+	restoreScore =
 		let
 			src = pkgs.fetchurl {
 				url = "http://sourcemod.krus.dk/restorescore.zip";
@@ -145,7 +145,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-4PFoZmmRR4KajRvMhyDiBONQJD18bqpHgwbdlKRJxME=";
+				sha256 = "sha256-T72g5K+CK6pa8Wdg3iHTjTWzWZMESW5esql2VYlRcIQ=";
 			};
 		in
 			pkgs.runCommand "srcmod-restore-score" {
@@ -154,7 +154,7 @@
 				mkdir -p $out/addons/sourcemod/plugins
 				unzip ${src} -d $out/addons/sourcemod/plugins
 			'';
-	fixStvSlot = 
+	fixStvSlot =
 		let
 			src = pkgs.fetchurl {
 				url = "http://sourcemod.krus.dk/fixstvslot.zip";
