@@ -128,7 +128,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-YbsWD1zRuN4f+DIIHxWnlhwPpF0gY0JS5fLu4UedcZM=";
+				sha256 = "sha256-+BbHJ/aVrdigrPOL0LmjV17FTXwEV9vZhFfO+escgMI=";
 			};
 		in
 			pkgs.runCommand "srcmod-afk" {
