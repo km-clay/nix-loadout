@@ -162,7 +162,7 @@
 					"-H" "User-Agent: Mozilla/5.0"
 					"-H" "Referer: https://www.teamfortress.tv/13598/?page=1#post-1"
 				];
-				sha256 = "sha256-ExRUmJGpFdOaTB+aHkvfiIaHe+6VAlK8pVwQLUBR81U=";
+				sha256 = "sha256-v8KVPhvr0xybt079KjrkNkbXhnE5R9qYsCG3YD9hEw0=";
 			};
 		in
 			pkgs.runCommand "srcmod-fix-stv-slots" {
