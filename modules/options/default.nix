@@ -70,4 +70,9 @@ in
 	rate = cvars.cvarInt "rate" "";
 	sensitivity = cvars.cvarFloat "sensitivity" "Mouse sensitivity.";
 	fpsMax = cvars.cvarInt "fps_max" "Maximum frames per second.";
+
+  rcon = cvars.cvarPrefix "rcon_" {
+    password = cvars.cvarString "password" "The remote control password for the server";
+    address = cvars.cvarString "address" "The ip address used for rcon";
+  };
 }
