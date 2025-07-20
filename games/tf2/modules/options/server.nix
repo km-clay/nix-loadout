@@ -1,8 +1,5 @@
-{ lib }:
+{ lib, cvars }:
 
-let
-	cvars = import ../../lib/cvar.nix { inherit lib; };
-in
 {
 	cheats = cvars.cvarBool "cheats" "Enable cheats on the server.";
 	gravity = cvars.cvarInt "gravity" "Gravity setting for the server.";

@@ -1,6 +1,7 @@
 { pkgs, lib, ... }:
 let
-  tf2Nix = import ./modules;
+  cvars = import ../../lib/cvar.nix { inherit lib; };
+  tf2Nix = import ./modules { inherit lib cvars; };
   tweakDefs = import ../../lib/tweaks.nix { inherit lib; };
   hudImporter = import ../../lib/installhud.nix { inherit lib pkgs; };
   sourceModInstaller = import ../../lib/installsrcmod.nix { inherit lib pkgs; };

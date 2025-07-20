@@ -1,7 +1,7 @@
-{ lib, config, ... }:
+{ lib, cvars, ... }:
 
 let
-  tf2Opts = import ./options { inherit lib; };
+  tf2Opts = import ./options { inherit lib cvars; };
   tf2Submodule = lib.types.submodule { options = tf2Opts; };
 in
 {
@@ -44,19 +44,19 @@ in
 
 			class = lib.genAttrs [
 				"scout"
-					"soldier"
-					"pyro"
-					"demoman"
-					"heavyweapons"
-					"engineer"
-					"medic"
-					"sniper"
-					"spy"
+        "soldier"
+        "pyro"
+        "demoman"
+        "heavyweapons"
+        "engineer"
+        "medic"
+        "sniper"
+        "spy"
 			] (name: lib.mkOption {
 					type = tf2Submodule;
 					default = {};
 					description = "Configuration options for the ${name} class.";
-					});
+        });
 
 			cfgFiles = lib.mkOption {
 				type = lib.types.attrsOf tf2Submodule;

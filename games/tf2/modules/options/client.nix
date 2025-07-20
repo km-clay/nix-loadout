@@ -1,8 +1,5 @@
-{ lib }:
+{ lib, cvars }:
 
-let
-	cvars = import ../../lib/cvar.nix { inherit lib; };
-in
 {
 	updateRate = cvars.cvarInt "updaterate" "";
 	cmdRate = cvars.cvarInt "cmdrate" "";

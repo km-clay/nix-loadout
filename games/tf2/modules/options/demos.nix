@@ -1,8 +1,5 @@
-{ lib }:
+{ lib, cvars }:
 
-let
-	cvars = import ../../lib/cvar.nix { inherit lib; };
-in
 {
 	mode = cvars.cvarInt "enable" "";
 	dir = cvars.cvarString "dir" "";

@@ -1,8 +1,5 @@
-{ lib }:
+{ lib, cvars }:
 
-let
-	cvars = import ../../lib/cvar.nix { inherit lib; };
-in
 {
 	useCompressedHdrTextures = cvars.cvarBool "use_compressed_hdr_textures" "";
 	phong = cvars.cvarBool "phong" "";

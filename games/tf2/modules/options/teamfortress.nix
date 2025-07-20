@@ -1,8 +1,5 @@
-{ lib }:
+{ lib, cvars }:
 
-let
-	cvars = import ../../lib/cvar.nix { inherit lib; };
-in
 {
 	explanations = cvars.cvarPrefix "explanations_" {
 		backpackPanel = cvars.cvarBool "backpackpanel" "";
