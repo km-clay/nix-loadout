@@ -1,0 +1,64 @@
+{ ... }:
+
+{
+  serverProperties = {
+    acceptsTransfers = true;
+    allowFlight = false;
+    allowNether = true;
+    broadcastConsoleToOps = true;
+    broadcastRconToOps = false;
+    bugReportLink = "https://example.com/report";
+    difficulty = "normal";
+    enableCommandBlock = true;
+    enableJmxMonitoring = false;
+    enableQuery = false;
+    enableRcon = true;
+    enableStatus = true;
+    enforceSecureProfile = true;
+    enforceWhitelist = false;
+    entityBroadcastRangePercentange = 100;
+    forceGamemode = false;
+    functionPermissionLevel = 2;
+    gamemode = "survival";
+    generateStructures = true;
+    generatorSettings = "";
+    hardcore = false;
+    hideOnlinePlayers = false;
+    initialDisabledPacks = "";
+    initialEnabledPacks = "vanilla";
+    levelName = "my-world";
+    levelSeed = "123456789";
+    levelType = "default";
+    maxChainedNeighborUpdates = 1000000;
+    maxPlayers = 20;
+    maxTickTime = 60000;
+    maxWorldSize = 29999984;
+    motd = "A Nix-powered Minecraft server!";
+    networkCompressionThreshold = 256;
+    onlineMode = true;
+    opPermissionLevel = 4;
+    pauseWhenEmptySeconds = 0;
+    playerIdleTimeout = 30;
+    preventProxyConnections = false;
+    pvp = true;
+    queryPort = 25565;
+    rateLimit = 0;
+    rconPassword = "secret123";
+    rconPort = 25575;
+    regionFileCompression = "gzip";
+    requireResourcePack = false;
+    resourcePackUrl = "";
+    resourcePackId = "";
+    resourcePackPrompt = "";
+    resourcePackSha1 = "";
+    serverIp = "0.0.0.0";
+    serverPort = 25565;
+    simulationDistance = 10;
+    spawnMonsters = true;
+    spawnProtection = 10;
+    syncChunkWrites = true;
+    useNativeTransport = true;
+    viewDistance = 10;
+    whiteList = false;
+  };
+}

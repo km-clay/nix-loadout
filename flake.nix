@@ -14,6 +14,9 @@
 
 	in {
     inherit gameModules;
-		packages.${system}.default = gameModules.tf2.buildConfig [ ./example-config.nix ];
+    packages.${system} = {
+      tf2Example = gameModules.tf2.buildConfig [ ./example-config-tf2.nix ];
+      mcExample = gameModules.minecraft.buildConfig [ ./example-config-minecraft.nix ];
+    };
 	};
 }
