@@ -1,6 +1,6 @@
 { lib, pkgs }:
 
-hudCfg: 
+hudCfg:
 	let
 		enabledHuds = lib.filterAttrs (_: v: v.enable or false) hudCfg;
 		hudNames = builtins.attrNames enabledHuds;
@@ -16,7 +16,7 @@ hudCfg:
 				owner = "jakadak";
 				repo = "ahud-cc";
 				rev = "master";
-				sha256 = "sha256-TRRT6YaFG/I6cJEZ91zDmJHdqhUPB2wA0ObXm8Al5mk=";
+				sha256 = "sha256-dtsg/krIQ0pN79fLn0lGDAdA0h27KGXEgoLv3ghg0xk=";
 			};
 		};
 
