@@ -58,11 +58,9 @@
 		pitchMinDamage = cvars.cvarInt "_pitchmindamage" "";
 		pitchMaxDamage = cvars.cvarInt "_pitchmaxdamage" "";
 		enableKillsound = cvars.cvarBool "aling_lasthit" ""; # "tf_dingalingaling_lasthit"
-		killsound = {
-			volume = cvars.cvarFloat "_lasthit_volume" ""; # "tf_dingaling_lasthit_volume"
-			pitchMinDamage = cvars.cvarInt "_lasthit_pitchmindamage" ""; # "tf_dingaling_lasthit_pitchmindamage"
-			pitchMaxDamage = cvars.cvarInt "_lasthit_pitchmaxdamage" ""; # "tf_dingaling_lasthit_pitchmaxdamage"
-		};
+		killsoundVolume = cvars.cvarFloat "_lasthit_volume" "";
+		killsoundPitchMinDamage = cvars.cvarInt "_lasthit_pitchmindamage" "";
+		killsoundPitchMaxDamage = cvars.cvarInt "_lasthit_pitchmaxdamage" "";
 	};
 	remember = cvars.cvarPrefix "remember_" {
 		activeWeapon = cvars.cvarBool "activeweapon" "";
