@@ -45,7 +45,6 @@ renderCvars = prefix: cfg: opts:
 		let
 			val = cfg.${name};
 			opt = opts.${name} or null;
-			isPrefix = opt.extra.prefix or false;
 			cvarName = opt._cvarName or "";
 			type = opt.type or null;
 			subOpts =
@@ -62,8 +61,6 @@ renderCvars = prefix: cfg: opts:
 				aliasBlock val
 			else if name == "bind" then
 				bindBlock val
-			else if name == "extraPostfixConfig" || name == "extraPrefixConfig" then
-				val
 			else if builtins.isAttrs val then
 				renderCvars (prefix + cvarName) val subOpts
 			else if cvarName != "" then
@@ -73,16 +70,10 @@ renderCvars = prefix: cfg: opts:
 	) (builtins.attrNames cfg);
 in
 	let
-		prefix = cfg.extraPrefixConfig or "";
-		postfix = cfg.extraPostfixConfig or "";
-		body = builtins.concatStringsSep "\n" (
-			lib.filter (line: line != "") (
-				lib.splitString "\n" (renderCvars "" cfg opts)
-			)
-		) + "\n";
+		prefixLines = lib.splitString "\n" (cfg.extraPrefixConfig or "");
+		postfixLines = lib.splitString "\n" (cfg.extraPostfixConfig or "");
+		bodyLines = lib.splitString "\n" (renderCvars "" cfg opts);
+
+		lines = lib.filter (line: line != "") (prefixLines ++ bodyLines ++ postfixLines);
 	in
-		builtins.concatStringsSep "\n" (
-			lib.filter (line: line != "") (
-				lib.splitString "\n" (prefix + "\n" + body + "\n" + postfix)
-			)
-		) + "\n"
+		builtins.concatStringsSep "\n" lines + "\n"
